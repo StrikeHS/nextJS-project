@@ -37,3 +37,4 @@ export const getCurrentUser = query({
     return authComponent.getAuthUser(ctx);
   },
 });
+//
