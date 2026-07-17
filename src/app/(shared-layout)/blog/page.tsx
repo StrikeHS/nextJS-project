@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Metadata } from "next";
 import { Id } from "../../../../convex/_generated/dataModel";
 import { cacheLife, cacheTag } from "next/cache";
-import { connection } from "next/server";
+// import { connection } from "next/server";
 
 interface IBlogDataProps {
   dataPosts?: {
@@ -68,11 +68,11 @@ async function LoadingBlogListWrapper() {
 }
 
 async function LoadingBlogList({ dataPosts }: IBlogDataProps) {
-  // "use cache: private";
-  await connection();
+  "use cache: private";
+  // await connection();
   const data = await fetchAuthQuery(api.posts.getPosts);
-  // cacheLife("seconds");
-  // cacheTag("blog");
+  cacheLife("seconds");
+  cacheTag("blog");
 
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
