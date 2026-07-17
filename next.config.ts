@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
         port: "",
       },
       {
-        hostname: "keen-civet-231.eu-west-1.convex.cloud",
+        hostname: "courteous-antelope-122.convex.cloud",
         protocol: "https",
         port: "",
       },
